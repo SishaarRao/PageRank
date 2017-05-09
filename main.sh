@@ -38,6 +38,7 @@ for page in `ls Pages/*.html`; do
     echo `grep "link:to:*" $page`
     currPage=${page:10:1}
     echo $currPage
+    
 done
 # Matrix calculations
 
