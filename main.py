@@ -24,6 +24,17 @@ def main():
     print("Eigenvalues:\n" + str(np.matrix(vals)) + "\n\n")
     print("Eigenvectors:\n"+ str(np.matrix(vecs)) + "\n\n")
 
-main()
+    # Discard Complex variables
+    eigenvector = []
+    for vec in vecs:
+        eigenvector.append(float(vec[0]))
 
+    # Print Search Results
+    print("\nSearch Results:")
+    for page in np.argsort(eigenvector)[::-1]:
+        print("Page " + str(page+1))
+
+start_time = time.time()
+main()
+print("--- %s seconds ---" % (time.time() - start_time))
 
