@@ -23,23 +23,37 @@ function printMatrix() {
     
 }
 
+declare -a matrix
+
 # Construct the Matrix
-for ((i=1;i<=$count;i++)) do
-    for ((j=1;j<=$count;j++)) do
-        matrix[$i,$j]=0
+for ((i=1;i<=$count;i++)); do
+    for ((j=1;j<=$count;j++)); do
+        matrix[$i,$j]=$RANDOM
     done
 done
-    
 printMatrix
 
+echo ${matrix[0,1]}
+
+printMatrix
+exit
 #Parse text, filling in the matrix
 for page in `ls Pages/*.html`; do
     denom=`grep -c "link:to:*" $page`
-    echo `grep "link:to:*" $page`
-    currPage=${page:10:1}
-    echo $currPage
-    
+    links=`grep "link:to:*" $page`
+    col=${page:10:1}
+    echo $denom
+    echo
+    for link in $links; do
+	row=${link:12:1}
+	echo $row
+	echo $col
+	#matrix[$row,$col]=$(echo "scale=6; 1/$denom" |bc)
+	matrix[$row,$col]=1
+    done
 done
+
+printMatrix
 # Matrix calculations
 
 
