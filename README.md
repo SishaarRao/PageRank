@@ -1,5 +1,8 @@
 # PageRank Demonstration
 This repository is a demonstration of the applications of Linear Algebra, namely Eigenvector calculations, to the Pagerank algorithms made famous by Google
+
+I wrote about how this algorithm works [here!](https://dev.to/sishaarrao/demystifying-the-pagerank-algorithm)
+
 ## Requirements
 This Pagerank demonstration requires Python 3.x and Bash 4.x
 
